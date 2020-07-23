@@ -1,5 +1,5 @@
 # DockerDeployment
-# Accessing Linode Ubuntu Server with Linode-CLI and set up SSH
+# Setup Linode Ubuntu Server with Linode-CLI and set up SSH
 ```
     # Get the linode-cli
     > mkdir linode-cli
