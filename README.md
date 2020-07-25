@@ -35,6 +35,35 @@
     > sudo ufw default deny incoming
     > sudo ufw allow ssh # enable to allow ssh connections
     > sudo ufw enable
+
+    # Add docker
+    https://docs.docker.com/engine/install/ubuntu/
+```
+
+Get Docker-compose files on server or you could use Github:
+```
+    > scp <filename> admin@<ip-address>:~/folder/<filename>
+```
+
+Download Docker images with Github Packages:
+```
+    > docker pull docker.pkg.github.com/OWNER/REPOSITORY/IMAGE_NAME:TAG_NAME
+```
+
+Server should have personal token with read access only to Github Packages
+Publish Docker images so server can download them:
+```
+    # Login with token
+    > cat personal_token | docker login https://docker.pkg.github.com -u GITUSERNAME --password-stdin
+    
+    # Upload premade image:
+    > docker images # will contain image id
+    > docker tag IMAGE_ID docker.pkg.github.com/OWNERS_GIT/REPOSITORY/IMAGE:TAG # image and tag can be what you want
+    > docker push docker.pkg.github.com/OWNERS_GIT/REPOSITORY/IMAGE:TAG
+
+    # Build image and upload
+    > docker build -t docker.pkg.github.com/OWNERS_GIT/REPOSITORY/IMAGE:TAG /path/to/dockerfile/folder
+    > docker push docker.pkg.github.com/OWNERS_GIT/REPOSITORY/IMAGE:TAG
 ```
 
 Process to Deploy to Linode server with Traefic reverse proxy:
