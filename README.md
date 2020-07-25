@@ -50,7 +50,6 @@ Download Docker images with Github Packages:
     > docker pull docker.pkg.github.com/OWNER/REPOSITORY/IMAGE_NAME:TAG_NAME
 ```
 
-Server should have personal token with read access only to Github Packages
 Publish Docker images so server can download them:
 ```
     # Login with token
