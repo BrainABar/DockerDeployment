@@ -1,4 +1,9 @@
 # DockerDeployment
+
+The following is a setup of a Linode server to use with docker.
+Clients hit server, server passes traffic to reverse proxy and passes request to proper container
+![Sample Diagram](./initial_layout.png)
+
 # Setup Linode Ubuntu Server with Linode-CLI and set up SSH
 ```
     # Get the linode-cli
